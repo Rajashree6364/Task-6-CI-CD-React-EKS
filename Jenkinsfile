@@ -15,6 +15,18 @@ pipeline {
             }
         }
 
+        stage('Unit Testing') {
+            steps {
+                bat 'npm test'
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                bat 'npm run lint'
+            }
+        }
+
         stage('Build React App') {
             steps {
                 bat 'npm run build'
